@@ -19,15 +19,14 @@ def new_student():
 def addrec():
    if request.method == 'POST':
       try:
-         EmpID = request.form['EmpID']
-         EmpName = request.form['EmpName']
-         EmpGender = request.form['EmpGender']
-         EmpPhone = request.form['EmpPhone']
-         EmpBdate = request.form['EmpBdate']
+         nm = request.form['nm']
+         addr = request.form['add']
+         city = request.form['city']
+         zip = request.form['zip']
          
-         with sql.connect(host="localhost", user="flask", password="password", database="flask_db") as con:
+         with sql.connect(host="localhost", user="flask", password="ubuntu", database="flask_db") as con:
             cur = con.cursor()
-            cmd = "INSERT INTO employee (EmpID,EmpName,EmpGender,EmpPhone,EmpBdate) VALUES ('{0}','{1}','{2}','{3}','{4}')".format(EmpID,EmpName,EmpGender,EmpPhone,EmpBdate)
+            cmd = "INSERT INTO students (name,addr,city,zip) VALUES ('{0}','{1}','{2}','{3}')".format(nm,addr,city,zip)
             cur.execute(cmd)
             
             con.commit()
@@ -42,9 +41,9 @@ def addrec():
 
 @app.route('/list')
 def list():
-   with sql.connect(host="localhost", user="flask", password="password", database="flask_db") as conn:  
+   with sql.connect(host="localhost", user="flask", password="ubuntu", database="flask_db") as conn:  
       cur = conn.cursor()
-      cur.execute("select * from employee")
+      cur.execute("select * from students")
       rows = cur.fetchall()
 
    return render_template("list.htm",rows = rows)
