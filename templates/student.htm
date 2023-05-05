@@ -2,18 +2,18 @@
 
 {% block content %}
 <form action="{{ url_for('addrec') }}" method="POST">
-   <h3>Student Information</h3>
-   Name<br>
-   <input type="text" name="nm" /></br>
+   <h3>Employee Information</h3>
+   EmpName<br>
+   <input type="text" name="EmpName" /></br>
 
-   Address<br>
-   <textarea name="add"></textarea><br>
+   EmpGender<br>
+   <input type="text" name="EmpGender" /></br>
 
-   City<br>
-   <input type="text" name="city" /><br>
+   EmpPhone<br>
+   <input type="text" name="EmpPhone" /><br>
 
-   Zip Code<br>
-   <input type="text" name="zip" /><br>
+   EmpBDate<br>
+   <input type="text" name="EmpBdate" /><br>
    <input type="submit" value="submit" /><br>
 </form>
 </body>

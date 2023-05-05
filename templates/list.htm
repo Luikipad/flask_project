@@ -5,10 +5,11 @@
 
 <table class="table table-striped table-bordered">
    <thead class="bg-primary">
-      <td>Name</td>
-      <td>Address</td>
-      <td>City</td>
-      <td>Zipcode</td>
+      <td>EmpID</td>
+      <td>EmpName</td>
+      <td>EmpGender</td>
+      <td>EmpPhone</td>
+      <td>EmpBdate</td>
    </thead>
 
    {% for row in rows %}
@@ -17,8 +18,9 @@
       <td>{{row[2]}}</td>
       <td> {{row[3]}}</td>
       <td>{{row[4]}}</td>
+      <td>{{row[5]}}</td>
    </tr>
    {% endfor %}
 </table>
-<a href="/">Go back to home page</a>
+<a href="/">Go Back To Home Page</a>
 {% endblock %}
